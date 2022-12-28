@@ -1,0 +1,136 @@
+// Import Font Family from Google Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+// Set variables for primary colors
+
+$paleBlue:     hsl(225, 100%, 94%);
+$brightBlue:   hsl(245, 75%, 52%);
+
+// Set variables for neutral colors
+
+$veryPaleBlue:    hsl(225, 100%, 98%);
+$desaturatedBlue: hsl(224, 23%, 55%);
+$darkBlue:        hsl(223, 47%, 23%);
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: url(../images/pattern-background-desktop.svg) no-repeat top center;
+    background-size: contain;
+    background-color: $paleBlue;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+.link {
+    font-weight: 700;
+    color: $desaturatedBlue;
+    text-decoration: none;
+    transition: color ease-in-out .2s;
+
+    &:hover, 
+    &:focus {   
+        color: black
+    }
+
+    &--accent {
+        color: $brightBlue;
+        text-decoration: underline;
+        &:hover, 
+        &:focus {
+            color: lighten($brightBlue, 20%);
+        }
+    }
+}
+
+.btn {
+    border: 0;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 15px 40px;
+    margin: 20px 0;
+    font-weight: 700;
+    font-size: 16px;
+    transition: background-color ease-in-out .3s;
+    box-shadow: 0 1rem 1.5rem $paleBlue;
+    font-family: 'Red Hat Display', sans-serif;
+    background-color: $brightBlue;
+
+    &:hover, &:focus {
+        background-color: lighten($brightBlue, 20%);
+    }
+}
+
+.order-summary-card {
+    max-width: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1rem 1.5rem $paleBlue;
+
+    &__content {
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    &__desc {
+        line-height: 1.5;
+        margin: 20px 0;
+        color: $desaturatedBlue;
+    }
+
+    &__price-box {
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: $veryPaleBlue;
+        justify-content: space-between;
+
+        &__info {
+            display: flex;
+            &__text {
+                padding-left: 20px;
+            }
+        }
+    }
+
+    &__cta-container {
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+
+        .btn {
+            min-width: 80%;
+        }
+
+
+    }
+
+
+}
+
